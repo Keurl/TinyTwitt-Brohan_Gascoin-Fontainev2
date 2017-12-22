@@ -65,3 +65,10 @@ Voici les échantillons utilisés pour le calcul :
 # <h2> 5000 followers ?</h2>
 
 Pour le cas des 5000 followers et vu notre implémentation du projet, google ne nous fournis pas assez d'espace gratuit pour pouvoir effectuer nos tests. Une des solutions serait de trouver une autre implémentation du code, notamment ne pas dupliquer chaque tweet (cela donne de bonnes performances mais prend énormement de places, c'est la solution que nous avons choisis mais elle n'est pas idéale) et seulement récupérer le dernier tweet de chaque personne follow pour l'afficher dans une timeline.
+
+
+#<h1> calcul de la variance : temps d'affichage de la timeline </h1>
+
+<h2> Explications </h2>
+
+Nous nous sommes rendu compte qu'au vu de notre implémentation du sujet, le nombre de personnes follow n'influence pas sur nos performance, puisque chacun se retrouve avec une copie du tweet de la personne suivie. De ce fait, notre implémentation permet un très bon temps d'exécution mais une très mauvaise gestion de la quantité de données.
