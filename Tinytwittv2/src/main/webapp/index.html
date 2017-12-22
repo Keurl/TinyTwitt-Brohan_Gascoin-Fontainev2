@@ -6,10 +6,30 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-resource.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
 		<script type="text/javascript" src="services.js"></script>
+		<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
+		<script type="text/javascript">
+			(function($) {
+		    // on peut utiliser le $ de jQuery
+		    $(document).ready(function() {
+		        // le DOM est chargé
+		        $('.toggle').on('click', function() {
+		            $('#toggled').toggle();
+		            return false;
+		        });
+		   });
+		})(jQuery);​
+	
+	
+	</script>
 	</head>
+	
 
+	
+	
 	<body>
-		<table border = "1" ng-controller = "tinyTwitt">
+	
+	<a href = "#" class = "toggle">afficher les utilisateurs </a>
+		<table id ="toggled" border = "1" ng-controller = "tinyTwitt">
 		<tr>
 			<th> pseudo </th>
 		</tr>
