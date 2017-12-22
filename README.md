@@ -45,6 +45,7 @@ Voici les échantillons utilisés pour le calcul :
 </table>
 
 la moyenne est de : 0.18940333333333334
+
 la variance est de : 0.009188452322222224
 
 # <h2> 1000 followers </h2>
@@ -58,7 +59,8 @@ Voici les échantillons utilisés pour le calcul :
  </table>
  
  la moyenne est de : 0.1867933333333334
-la variance est de : 0.006568519955555555
+
+ la variance est de : 0.006568519955555555
 
 # <h2> 5000 followers ?</h2>
 
