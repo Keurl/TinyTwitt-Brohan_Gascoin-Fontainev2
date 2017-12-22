@@ -1,7 +1,7 @@
 <!doctype html>
 <html ng-app="tinyTwitt">
 	<head>
-		<title>Hello AngularJS</title>
+		<title>TinyTwitt par Samy GASCOIN-FONTAINE et Romain BROHAN</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-resource.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
@@ -9,7 +9,10 @@
 	</head>
 
 	<body>
-		<table  ng-controller = "tinyTwitt">
+		<table border = "1" ng-controller = "tinyTwitt">
+		<tr>
+			<th> pseudo </th>
+		</tr>
 		 <tr ng-repeat = "data in users">
 			<td>{{data.pseudo}}</td>
 		</tr> 
@@ -28,7 +31,7 @@
 	    
 	    <div ng-controller="nouvelUtilisateur">
 	    <form novalidate class = "simple-form">
-	    <input type="text" ng-model = "pseudo.name"/><br>
+	    <input type="text" ng-model = "pseudo.name" placeholder ="Entrez votre pseudo ici"/><br>
 	    <input type="submit" ng-click="addUtilisateur(pseudo)" value = "inscription"/>
 	    </form>
 	    <p> Temps d'execution : {{perf}} millisecondes</p>
@@ -59,7 +62,7 @@
 	<h2> Afficher sa Timeline </h2>
 		<div ng-controller="timelineController">
 		<form novalidate>
-	    <input type="text" ng-model = "pseudo.name"/><br>
+	    <input type="text" ng-model = "pseudo.name" placeholder ="Identifiez-vous"/><br>
 	    <input type="submit" ng-click="afficheTimeline(pseudo)" value = "afficher"/>
 	    </form>
 

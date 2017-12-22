@@ -1,25 +1,19 @@
 package fr.tweet;
 
-import java.io.Serializable;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.bind.annotation.*;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
-import com.googlecode.objectify.annotation.Serialize;
 
 
 @Entity
-public class TwitterUser implements Serializable{
+public class TwitterUser{
 	
 /* Attributs */
 	
-
-/**
-	 * 
-	 */
-
 
 private @Id String pseudo;
 
