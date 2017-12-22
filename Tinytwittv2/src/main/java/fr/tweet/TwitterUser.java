@@ -1,17 +1,25 @@
 package fr.tweet;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.bind.annotation.*;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 import com.googlecode.objectify.annotation.Serialize;
 
+
 @Entity
-public class TwitterUser{
+public class TwitterUser implements Serializable{
 	
 /* Attributs */
 	
+
+/**
+	 * 
+	 */
+
 
 private @Id String pseudo;
 
@@ -31,6 +39,7 @@ public TwitterUser(String nom){
 	this.tweets = new ArrayList<String>();
 }
 
+
 public String getPseudo(){
 	return this.pseudo;
 }
@@ -45,7 +54,7 @@ public void setFollowers(ArrayList<String> init) {
 	
 }
 
-public ArrayList<String> getTimeline(){
+public ArrayList<String> getTweets(){
 	return this.tweets;
 }
 
@@ -60,6 +69,9 @@ public void addFollower(String cible){
 }
 
 public void tweeter(String letweet){
+	if (this.tweets == null) {
+		this.setTimeline(new ArrayList<String>());
+	}
 	if(letweet != null) {
 	this.tweets.add(0, letweet);
 	} else {

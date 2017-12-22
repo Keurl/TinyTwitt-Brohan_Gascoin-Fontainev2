@@ -2,14 +2,72 @@
 <html ng-app="tinyTwitt">
 	<head>
 		<title>Hello AngularJS</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
-    	<script src="services.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-resource.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+		<script type="text/javascript" src="services.js"></script>
 	</head>
 
 	<body>
-		<div ng-controller="Hello">
-			<p>The ID is {{greeting.id}}</p>
-			<p>The content is {{greeting.content}}</p>
+		<table  ng-controller = "tinyTwitt">
+		 <tr ng-repeat = "data in users">
+			<td>{{data.pseudo}}</td>
+		</tr> 
+		</table>
+	<h2> Les services TinyTwitt </h2>
+		<table>
+		      <tr>
+		        <td colspan="2" style="font-weight:bold;">Available Services:</td>        
+		      </tr>
+		      <tr>
+		        <td><a href='/_ah/api/explorer'>The services</a></td>
+		      </tr>
+	    </table>
+	    	    	    
+	<h2> Ajout d'un nouvel utilisateur</h2>
+	    
+	    <div ng-controller="nouvelUtilisateur">
+	    <form novalidate class = "simple-form">
+	    <input type="text" ng-model = "pseudo.name"/><br>
+	    <input type="submit" ng-click="addUtilisateur(pseudo)" value = "inscription"/>
+	    </form>
+	    <p> Temps d'execution : {{perf}} millisecondes</p>
+	    </div>
+	 
+	 <h2> Suivre un utilisateur </h2>
+	 
+	    <div ng-controller="followController">
+		    <form novalidate>
+		    <input type="text" ng-model = "pseudo.name" placeholder = "Votre pseudo"/><br>
+		    <input type="text" ng-model = "followed.name" placeholder = "Son pseudo"/><br>
+		    <input type="submit" ng-click="followUtilisateur(pseudo,followed)" value = "follow"/>		   
+		    </form>
+		    <p> Temps d'execution : {{perf}} millisecondes</p>
+	    </div>
+	    
+	  <h2> Poster un tweet </h2>
+	 
+	    <div ng-controller="tweetController">
+		    <form novalidate>
+		    <input type="text" ng-model = "pseudo.name" placeholder = "Votre pseudo"/><br>
+		    <input type="text" ng-model = "tweet.content" size = "140" rows = "4" placeholder = "Votre Tweet !"/><br>
+		    <input type="submit" ng-click="postTweet(pseudo,tweet)" value = "poster"/>
+		    </form>
+		    <p> Temps d'execution : {{perf}} millisecondes</p>
 		</div>
+		
+	<h2> Afficher sa Timeline </h2>
+		<div ng-controller="timelineController">
+		<form novalidate>
+	    <input type="text" ng-model = "pseudo.name"/><br>
+	    <input type="submit" ng-click="afficheTimeline(pseudo)" value = "afficher"/>
+	    </form>
+
+	      <div ng-repeat = "data in tweets">	      
+	      <strong>{{data.tweet}}</strong><br/> 
+	      </div>
+	   		<p> Temps d'execution : {{perf}} millisecondes </p>
+	    </div>
+	    
 	</body>
 </html>
